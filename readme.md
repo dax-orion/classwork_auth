@@ -1,6 +1,8 @@
-# Classwork on CRUD
+# Classwork on Authentication
 
 A simple website for a company offering cooking classes. Implements simple CRUD (create, read, update, delete) functionality for subscriber, user, and course entities.
+
+Implements simple login and logout using passport.js.
 
 # Usage
 
