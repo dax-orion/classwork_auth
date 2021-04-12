@@ -1,0 +1,48 @@
+<h2 class="center">Course Data for <%= course.name %></h2>
+<div>
+    <a class="btn btn-primary" href="/courses">
+        &larr; View All
+    </a>
+    <a class="btn btn-primary" href="<%= `/courses/${course._id}/edit` %>">
+        Edit
+    </a>
+    <a class="btn btn-primary" href="<%= `/courses/${course._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure?')">
+        Delete
+    </a>
+</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                Title
+            </td>
+            <td>
+                <%= course.title %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Description
+            </td>
+            <td>
+                <%= course.description %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Max Students
+            </td>
+            <td>
+                <%= course.maxStudents %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Cost
+            </td>
+            <td>
+                $<%= course.cost %>
+            </td>
+        </tr>
+    </tbody>
+</table>

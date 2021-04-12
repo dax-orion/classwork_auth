@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Confetti Cuisine</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/confetti_cuisine.css">
+    </head>
+    <body>
+        <div id="nav">
+            <div class="col-sm nav-align" id="title">
+                <h1>CONFETTI CUISINE</h1>
+            </div>
+            <div class="col-sm nav-align">
+                <a href="/">
+                    <span class="button">Home</span>
+                </a>
+                <a href="/courses">
+                    <span class="button">Courses</span>
+                </a>
+                <a href="/subscribers">
+                    <span class="button">Contact</span>
+                </a>
+                <a href="/users">
+                    <span class="button">Users</span>
+                </a>
+            </div>
+
+            <div class="login">
+                <% if(loggedIn) { %> 
+                    <p>
+                        Logged in as <a href="<%= `/users/${currentUser._id}` %>">
+                            <%= currentUser.fullName %>
+                        </a>
+                    </p>
+                    <span class="log-out">
+                        <a href="/users/logout">Log out</a>
+                    </span>
+                <% } else { %>
+                    <a href="/users/login">Log in</a>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="flashes">
+            <% if(flashMessages) { %>
+                <% if(flashMessages.success) { %>
+                    <div class="flash success">
+                        <%= flashMessages.success %>
+                    </div>
+                <% } else if(flashMessages.error) { %>
+                    <div class="flash error">
+                        <%= flashMessages.error %>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+
+        <div class="container">
+            <%- body%>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+    </body>
+</html>

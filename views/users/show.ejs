@@ -1,0 +1,52 @@
+<h2 class="center">User Data for <%= `${user.name.first} ${user.name.last}` %></h2>
+<div>
+    <a class="btn btn-primary" href="/users">
+        &larr; View All
+    </a>
+    <a class="btn btn-primary" href="<%= `/users/${user._id}/edit` %>">
+        Edit
+    </a>
+    <a class="btn btn-primary" href="<%= `/users/${user._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure?')">
+        Delete
+    </a>
+</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                <%= user.name.first %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name
+            </td>
+            <td>
+                <%= user.name.last %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <%= user.email %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zip Code
+            </td>
+            <td>
+                <%= user.zipCode %>
+            </td>
+        </tr>
+        <tr>
+            <td>Num of courses</td>
+            <td><%= user.courses.length %></td>
+        </tr>
+    </tbody>
+</table>

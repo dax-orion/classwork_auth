@@ -1,0 +1,44 @@
+<h2 class="center">Subscriber Data for <%= subscriber.name %></h2>
+<div>
+    <a class="btn btn-primary" href="/subscribers">
+        &larr; View All
+    </a>
+    <a class="btn btn-primary" href="<%= `/subscribers/${subscriber._id}/edit` %>">
+        Edit
+    </a>
+    <a class="btn btn-primary" href="<%= `/subscribers/${subscriber._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure?')">
+        Delete
+    </a>
+</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                <%= subscriber.name %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <%= subscriber.email %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zip Code
+            </td>
+            <td>
+                <%= subscriber.zipCode %>
+            </td>
+        </tr>
+        <tr>
+            <td>Num of courses</td>
+            <td><%= subscriber.courses.length %></td>
+        </tr>
+    </tbody>
+</table>
